@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -20,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +60,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\metro-icons.css" />
+    <Content Include="css\modernUiReact.css" />
+    <Content Include="js\build\common.js" />
+    <Content Include="js\build\control\accordion.js" />
+    <Content Include="js\build\control\appBar.js" />
+    <Content Include="js\build\control\appBarElement.js" />
+    <Content Include="js\build\control\button.js" />
+    <Content Include="js\build\control\dialog.js" />
+    <Content Include="js\build\control\group.js" />
+    <Content Include="js\build\control\navigate.js" />
+    <Content Include="js\build\control\page.js" />
+    <Content Include="js\build\control\textBox.js" />
+    <Content Include="js\build\layout\cell.js" />
+    <Content Include="js\build\layout\grid.js" />
+    <Content Include="js\build\layout\gridLayout.js" />
     <Content Include="js\react\browser.min.js" />
     <Content Include="js\react\jquery.min.js" />
     <Content Include="js\react\JSXTransformer.js" />
@@ -67,12 +84,28 @@
     <Content Include="js\react\react-with-addons.js" />
     <Content Include="js\react\react-with-addons.min.js" />
     <Content Include="js\react\react.js" />
+    <Content Include="js\src\common.js" />
+    <Content Include="js\src\control\navigate.js" />
+    <Content Include="js\src\control\page.js" />
+    <Content Include="js\src\control\dialog.js" />
+    <Content Include="js\src\control\accordion.js" />
+    <Content Include="js\src\control\group.js" />
+    <Content Include="js\src\control\appBarElement.js" />
+    <Content Include="js\src\control\appBar.js" />
+    <Content Include="js\src\control\textBox.js" />
+    <Content Include="js\src\control\button.js" />
+    <Content Include="js\src\layout\cell.js" />
+    <Content Include="js\src\layout\grid.js" />
+    <Content Include="test\button.html" />
+    <Content Include="test\2.html" />
+    <Content Include="test\layout.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\metro.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -80,14 +113,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="test\" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
